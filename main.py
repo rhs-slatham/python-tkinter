@@ -1,22 +1,21 @@
-from Tkinter import *
-import random
+# Tkinter spelled as "tkinter" or "Tkinter" depending on Python version.
+from tkinter import *
 
-tk = Tk()
-canvas = Canvas(tk, width=500, height=400)
-tk.title("Drawing")
-canvas.pack()
+root = Tk()
 
-canvas.create_line(0,0,500,400)
-canvas.create_rectangle(100,100,200,250)
-canvas.create_rectangle(50,50,100,100, fill="blue")
-canvas.create_oval(160,160,250,250, fill="yellow")
-canvas.create_polygon(400,10,300,300,500,300, fill="purple")
+root.title("My GUI title")
+root.geometry("500x200")
 
-for i in range(50):
-	x1 = random.randrange(500)
-	y1 = random.randrange(400)
-	x2 = random.randrange(500)
-	y2 = random.randrange(400) 
-	canvas.create_rectangle(x1,y1,x2,y2)
+app = Frame(root)
+app.grid()
 
-canvas.mainloop()
+button1 = Button(app, text = "Button1")
+button1.grid()
+
+button2 = Button(app)
+button2.grid()
+button2.configure(text = "Button2")
+
+button3 = Button(app)
+button3.grid()
+button3["text"] = "Button3"
